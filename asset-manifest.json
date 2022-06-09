@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ZQZCalin/optimization-related-blog/static/css/main.6544b215.css",
+    "main.js": "/ZQZCalin/optimization-related-blog/static/js/main.8d756c08.js",
+    "static/js/787.dfb08324.chunk.js": "/ZQZCalin/optimization-related-blog/static/js/787.dfb08324.chunk.js",
+    "index.html": "/ZQZCalin/optimization-related-blog/index.html",
+    "main.6544b215.css.map": "/ZQZCalin/optimization-related-blog/static/css/main.6544b215.css.map",
+    "main.8d756c08.js.map": "/ZQZCalin/optimization-related-blog/static/js/main.8d756c08.js.map",
+    "787.dfb08324.chunk.js.map": "/ZQZCalin/optimization-related-blog/static/js/787.dfb08324.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6544b215.css",
+    "static/js/main.8d756c08.js"
+  ]
+}
