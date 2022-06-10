@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ZQZCalin/optimization-related-blog/static/css/main.6544b215.css",
-    "main.js": "/ZQZCalin/optimization-related-blog/static/js/main.8d756c08.js",
-    "static/js/787.dfb08324.chunk.js": "/ZQZCalin/optimization-related-blog/static/js/787.dfb08324.chunk.js",
-    "index.html": "/ZQZCalin/optimization-related-blog/index.html",
-    "main.6544b215.css.map": "/ZQZCalin/optimization-related-blog/static/css/main.6544b215.css.map",
-    "main.8d756c08.js.map": "/ZQZCalin/optimization-related-blog/static/js/main.8d756c08.js.map",
-    "787.dfb08324.chunk.js.map": "/ZQZCalin/optimization-related-blog/static/js/787.dfb08324.chunk.js.map"
+    "main.css": "/static/css/main.6544b215.css",
+    "main.js": "/static/js/main.a8a993a0.js",
+    "static/js/787.dfb08324.chunk.js": "/static/js/787.dfb08324.chunk.js",
+    "index.html": "/index.html",
+    "main.6544b215.css.map": "/static/css/main.6544b215.css.map",
+    "main.a8a993a0.js.map": "/static/js/main.a8a993a0.js.map",
+    "787.dfb08324.chunk.js.map": "/static/js/787.dfb08324.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6544b215.css",
-    "static/js/main.8d756c08.js"
+    "static/js/main.a8a993a0.js"
   ]
 }
