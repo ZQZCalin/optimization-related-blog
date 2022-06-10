@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# How to write and add a new blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Write a blog
 
-## Available Scripts
+For basic syntax, refer to the template blog (whose code is the `blog-raw-template` object in `src/blogs/AllPosts.js`).
+To write a new blog, you can go to `src/blogs/Template.js` and modify the `content`. You can run `npm start` and preview your blog locally on the `Template` page.
 
-In the project directory, you can run:
+## Add a blog
 
-### `npm start`
+To add the new blog, move the object in `Template.js` to `AllPosts.js` and give it a unique id. For example, the new `AllPosts.js` should look like:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```javascript
+export const database = {
+  ...
+  "new-blog-id": {
+    title: "Title of new blog",
+    author: "your name",
+    date: new Date("YYYY/MM/DD"),
+    content: (....),
+  },
+};
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Currently you need to manually update your github page by running `npm run deploy` after writing your blog.
 
-### `npm test`
+# How to customize your styling
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can customize your own style by modifying the CSS file `src/theme.css`. The basic styles are listed at the beginning as variables in `:root`, including colors and typography.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# To do list:
+1. Add a feature of latex -> html conversion with correct syntax.
+2. Add a database.
+3. Add an online blog editor (using markdown).
