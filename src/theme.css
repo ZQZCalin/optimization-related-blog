@@ -17,12 +17,12 @@
     --theme-background-color: white;
     --theme-background-color-footer: gray;
 
-    --theme-font-size-text: 12pt;
+    --theme-font-size-text: 14pt;
     --theme-font-size-code: 11pt;
     /* for latex style, set 18pt, 16pt, 14pt for h1, h2, h3 resp. */
-    --theme-font-size-h1: 12pt;  
-    --theme-font-size-h2: 12pt;
-    --theme-font-size-h3: 12pt;
+    --theme-font-size-h1: 18pt;  
+    --theme-font-size-h2: 16pt;
+    --theme-font-size-h3: 16pt;
 
     --theme-font-weight-text: 400;
     --theme-font-weight-code: 300;
@@ -111,6 +111,9 @@ h2.subsection-title{
 }
 h3 {
     font-size: var(--theme-font-size-h3);
+}
+.MathJax {
+    font-size: 0.5em;
 }
 
 /* 6. Colors */
@@ -216,16 +219,16 @@ header.blog-header {
 }
 main.blog-content {
     grid-row: 2;
-    grid-column: 4/10;
+    grid-column: 3/11;
 }
 div.blog-navi {
     grid-row: 2;
-    grid-column: 1/4;
+    grid-column: 1/3;
 }
 /* todo: move it to the bottom */
 div.blog-aside {
     grid-row: 2;
-    grid-column: 10/13;
+    grid-column: 11/13;
     position: sticky;
 }
 
@@ -307,6 +310,10 @@ a.blog-list-item:hover {
 }
 
 
+/* ===== D. REVIEW PAGE ===== */
+/* Review Header */
+
+
 /* ===== D. COMPONENT STYLES ===== */
 
 /* Theorem */
@@ -333,14 +340,11 @@ div.theorem.definition {
 div.proof {
     overflow: hidden;
     margin: 1em 0;
-
-    display: flex;
-    flex-direction: row;
 }
 div.proof p {
     margin: 0;
 }
-div.proof-btn {
+/* div.proof-btn {
     align-self: flex-end;
     cursor: pointer;
     height: 20px;
@@ -349,7 +353,7 @@ div.proof-btn {
 div.proof-btn img {
     width: 16px; height: 16px;
     filter: invert(0.4);
-}
+} */
 div.proof, div.proof * {
     transition-duration: 1s;
 }

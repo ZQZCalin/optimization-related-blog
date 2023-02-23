@@ -7,7 +7,7 @@ function Theorem({
 }) {
 	// only 2 types of styles: plain, definition
 	const { thmData } = useContext(NumberingContext);
-	const id = `thm-${label}`;
+	const id = `${label}`;
 	const [num, setNum] = useState("");
 
 	useEffect(() => {
@@ -21,7 +21,7 @@ function Theorem({
 		<div id={id} className={`theorem ${thmstyle}`}>
 			<p>
 				<span className="theorem-heading">
-					{type}. {num}{name && `(${name}) `}
+					{type} {num}{name && `(${name}) `}
 				</span>
 				{props.children}
 			</p>

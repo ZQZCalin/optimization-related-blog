@@ -4,42 +4,25 @@ import Home from './pages/Home';
 import Blog, { BlogList, BlogContent } from './pages/Blog';
 import './App.css';
 import BlogContextProvider from './contexts/BlogContextProvider';
-
-// MathJax configuration
-const config = {
-  loader: { load: ['[tex]/ams'] },
-  tex: {
-    packages: {
-      '[+]': ['ams']
-    },
-    macros: {
-      // define macros (\newcommand{}{}) here
-      RR: "\\mathbb{R}",
-      NN: "\\mathbb{N}",
-      L: "\\mathcal{L}",
-      E: "\\mathop{\\textrm{E}}",
-      bold: ["{\\mathbf #1}", 1]
-    },
-    inlineMath: [
-      ["$", "$"],
-      ["\\(", "\\)"]
-    ],
-    displayMath: [
-      ["$$", "$$"],
-      ["\\[", "\\]"]
-    ],
-  },
-};
+import config from 'mathjax_config';
+import ReviewPage, { Review, ReviewList } from 'pages/Review';
 
 function App() {
   return (
-    <MathJaxContext config={config}>
+    <MathJaxContext config={config} onStartup={(mathjax) => {
+      console.log("reset numbering");
+      mathjax.texReset(0);}
+    }>
       <BlogContextProvider>
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="blogs" element={<Blog />}>
               <Route path="" element={<BlogList />} />
               <Route path=":blogId" element={<BlogContent />} />
+            </Route>
+            <Route path="reviews" element={<ReviewPage />}>
+              <Route path="" element={<ReviewList />} />
+              <Route path=":blogId" element={<Review />} />
             </Route>
             <Route path="/" element={<Home />} />
           </Routes>

@@ -26,7 +26,7 @@ function Subsection({
 	label, ...props
 }) {
 	const { subsectionData } = useContext(NumberingContext);
-	const id = `sec-${label}`;
+	const id = `${label}`;
 	const [num, setNum] = useState("");
 
 	useEffect(() => {

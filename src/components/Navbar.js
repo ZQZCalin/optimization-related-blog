@@ -10,6 +10,10 @@ const navigation = [
 		to: "/blogs",
 	},
 	{
+		name: "Paper Reviews",
+		to: "/reviews",
+	},
+	{
 		name: "Template",
 		to: "/blogs/blog-template",
 	}

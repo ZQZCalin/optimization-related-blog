@@ -10,15 +10,15 @@ function Proof(props) {
 		setHeight(ref.current.clientHeight);
 	})
 
+	const handleClick = () => setActive(!active);
+
 	return (
 		<div className="proof" style={{ maxHeight: active ? height : "1.5em" }}>
-			<div className="dropdown-wrapper">
-				<p ref={ref}>
-					<i>Proof. </i>
-					<span>{props.children}</span>
-				</p>
-			</div>
-			<ProofBtn active={active} setActive={setActive} />
+			<p ref={ref}>
+				<i onClick={handleClick} style={{cursor: "pointer"}}>Proof. </i>
+				<span>{props.children}</span>
+			</p>
+			{/* <ProofBtn active={active} setActive={setActive} /> */}
 		</div >
 	)
 }

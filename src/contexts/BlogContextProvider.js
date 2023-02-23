@@ -9,7 +9,7 @@ function useBlogData() {
 	// abbreviated array of blog data, excluding main content
 	const [blogData, setBlogData] = useState([]);
 	useEffect(() => {
-		console.log("loading database");
+		// console.log("loading database");
 		setRawData(database);
 		setBlogData(Object.entries(database).map(([id, {title, author, date}]) => {
 			return {
