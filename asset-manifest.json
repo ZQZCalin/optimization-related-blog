@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/optimization-related-blog/static/css/main.6544b215.css",
-    "main.js": "/optimization-related-blog/static/js/main.066dec32.js",
-    "static/js/787.dfb08324.chunk.js": "/optimization-related-blog/static/js/787.dfb08324.chunk.js",
-    "index.html": "/optimization-related-blog/index.html",
-    "main.6544b215.css.map": "/optimization-related-blog/static/css/main.6544b215.css.map",
-    "main.066dec32.js.map": "/optimization-related-blog/static/js/main.066dec32.js.map",
-    "787.dfb08324.chunk.js.map": "/optimization-related-blog/static/js/787.dfb08324.chunk.js.map"
+    "main.css": "/static/css/main.bf64f234.css",
+    "main.js": "/static/js/main.5f1cf3cb.js",
+    "static/js/787.dfb08324.chunk.js": "/static/js/787.dfb08324.chunk.js",
+    "index.html": "/index.html",
+    "main.bf64f234.css.map": "/static/css/main.bf64f234.css.map",
+    "main.5f1cf3cb.js.map": "/static/js/main.5f1cf3cb.js.map",
+    "787.dfb08324.chunk.js.map": "/static/js/787.dfb08324.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6544b215.css",
-    "static/js/main.066dec32.js"
+    "static/css/main.bf64f234.css",
+    "static/js/main.5f1cf3cb.js"
   ]
 }
