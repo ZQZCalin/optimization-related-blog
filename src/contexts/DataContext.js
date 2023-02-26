@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
-import { parseBibtex } from "utils";
-import review from "reviews/reviews.json";
-import bibtex from "reviews/bibtex.txt";
+import { parseBibtex } from "../utils";
+import review from "../reviews/reviews.json";
+import bibtex from "../reviews/bibtex.txt";
 
 const DataContext = createContext();
 

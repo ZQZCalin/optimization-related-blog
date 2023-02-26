@@ -1,12 +1,12 @@
+import { useContext, useEffect, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 import TableOfContent from "../components/TableOfContent";
-import NumberingContextProvider, { NumberingContext } from "../contexts/NumberingContextProvider";
-import { useContext, useEffect, useState } from "react";
-import { DataContext } from "contexts/DataContext";
-import Loading from "components/Loading";
+import NumberingContextProvider from "../contexts/NumberingContextProvider";
+import { DataContext } from "../contexts/DataContext";
 
 // Page Container
 function ReviewPage() {

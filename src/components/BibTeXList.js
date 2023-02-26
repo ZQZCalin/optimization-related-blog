@@ -1,4 +1,4 @@
-import { parseAuthors } from 'utils';
+import { parseAuthors } from '../utils';
 
 const BibTeXList = ({ data }) => (
   <ul className="biblist">

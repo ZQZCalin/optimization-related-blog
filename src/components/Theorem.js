@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { NumberingContext } from "../contexts/NumberingContextProvider";
-import { v4 as uuid } from "uuid";
 
 function Theorem({
 	type = "Theorem", name = "", label = "", thmstyle = "plain", ...props

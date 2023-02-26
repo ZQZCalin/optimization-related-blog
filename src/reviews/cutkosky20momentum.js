@@ -1,7 +1,7 @@
 import { MathJax } from "better-react-mathjax";
-import Proof from "components/Proof";
-import { Section } from "components/Section";
-import Theorem from "components/Theorem";
+import Proof from "../components/Proof";
+import { Section } from "../components/Section";
+import Theorem from "../components/Theorem";
 
 const content = (
   <MathJax>

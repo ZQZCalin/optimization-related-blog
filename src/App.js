@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MathJaxContext } from 'better-react-mathjax';
+import config from 'mathjax_config';
+
+import './App.css';
 import Home from './pages/Home';
 import Blog, { BlogList, BlogContent } from './pages/Blog';
-import './App.css';
+import ReviewPage, { Review, ReviewList } from './pages/Review';
 import BlogContextProvider from './contexts/BlogContextProvider';
-import config from 'mathjax_config';
-import ReviewPage, { Review, ReviewList } from 'pages/Review';
-import { DataProvider } from 'contexts/DataContext';
+import { DataProvider } from './contexts/DataContext';
 
 function App() {
   return (
