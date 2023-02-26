@@ -9,7 +9,7 @@ export const template = {
 	author: "author",
 	date: new Date(),
 	content: (
-		<main className="blog-content">
+		<>
 			<p><i>This is a basic guideline of how to write a customized blog.</i></p>
 
 			<section>
@@ -87,26 +87,30 @@ export const template = {
 					For more details, check <a href="https://docs.mathjax.org/en/latest/input/tex/differences.html" target="_blank">this documentation</a>.
 				</p>
 				<p>
-					<MathJax>{`
-						See this example: we can insert an inline math $y=x^2$ or \\(\\log y = \\frac{x}{3}\\).
+					<>
+						{`
+						See this example: we can insert an inline math $y=x^2$ or $\\log y = \\frac{x}{3}$.
 						There's also the display math:
 						$$
 							\\ell(\\bold w;\\bold x,y) = (y-\\langle \\bold w, \\bold x\\rangle)^2, \\ \\bold w\\in \\RR^d.
 						$$
 						Or
-						\\[
+						\[
 							\\langle \\nabla\\L(x), y-x \\rangle \\le \\L(y) - \\L(x).
-						\\]
+						\]
 						MathJax also supports the quation and align environment:
 						\\begin{equation}
 							\\E[X] = \\int_{\\RR^d} x p(x) \\, dx.
+							\\label{eq:1}
 						\\end{equation}
 						\\begin{align}
 							x^2 + 2x + 2
 							&= (x^2+2x+1) + 1 \\\\
 							&= (x+1)^2 + 1.
 						\\end{align}
-					`}</MathJax>
+						We can refer to MathJax Equations using \\eqref{eq:1}.
+						`}
+					</>
 				</p>
 
 				<Subsection label="macros">Macros</Subsection>
@@ -142,6 +146,6 @@ export const template = {
 					long long long long long long long long long long long long long long.
 				</Proof>
 			</section>
-		</main>
+		</>
 	),
 };

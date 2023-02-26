@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 import TableOfContent from "../components/TableOfContent";
+import BlogContent from "../components/BlogContent";
 import NumberingContextProvider from "../contexts/NumberingContextProvider";
 import { DataContext } from "../contexts/DataContext";
 
@@ -30,7 +31,6 @@ function Review() {
 
 	// get meta data
 	const { data } = useContext(DataContext);
-	const [metadata, setMetadata] = useState(null);
 
 	// initialize review content
 	const [content, setContent] = useState(null);
@@ -38,9 +38,6 @@ function Review() {
 	// fetch reveiw content once reviewId changes
 	useEffect(() => {
 		if (data) {
-			// update metadata
-			setMetadata(data.find(entry => entry.key === reviewId).fields);
-
 			// update content
 			import(`../reviews/${reviewId}.js`)
 				.then((module) => {
@@ -49,10 +46,9 @@ function Review() {
 				.catch((error) => {
 					console.error("Failed to load dynamic component", error);
 				});
-
-				// testing
-				console.log("review page loaded");
-			}
+			// testing
+			// console.log("review page loaded");
+		}
 	}, [data]);
 
 	// render
@@ -66,11 +62,13 @@ function Review() {
 		<NumberingContextProvider>
 			<main className="blog">
 				<header className="blog-header">
-					<h1>{metadata.title}</h1>
+					<h1>{data.find(entry => entry.key === reviewId).fields.title}</h1>
 					<hr className="blog-header-hr" />
 				</header>
+
 				<TableOfContent />
-				<main className="blog-content">{content}</main>
+
+				<BlogContent>{content}</BlogContent>
 			</main>
 		</NumberingContextProvider>
 	);

@@ -17,7 +17,7 @@ const DataProvider = ({ children }) => {
 					.filter(entry => review.includes(entry.key))
 					.sort((e1, e2) => e1.fields.title - e2.fields.title));
 				// testing
-				console.log("review data loaded");
+				// console.log("review data loaded");
 			})
 			.catch(error => console.error(error));
 	}, []);

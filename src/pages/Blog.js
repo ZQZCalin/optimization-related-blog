@@ -1,15 +1,17 @@
+import { useContext, useEffect, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
+
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { template } from "../blogs/Template";
 import BlogHeader from "../components/BlogHeader";
 import TableOfContent from "../components/TableOfContent";
-import NumberingContextProvider, { NumberingContext } from "../contexts/NumberingContextProvider";
-import { useContext, useEffect, useState } from "react";
+import BlogContent from "../components/BlogContent";
+import NumberingContextProvider from "../contexts/NumberingContextProvider";
 import { BlogContext } from "../contexts/BlogContextProvider";
+import { template } from "../blogs/Template";
 
-function Blog() {
+function BlogPage() {
 	return (
 		<div className="RootContainer">
 			<div className="ContentContainer">
@@ -22,7 +24,7 @@ function Blog() {
 	);
 }
 
-function BlogContent() {
+function Blog() {
 	// get ip param
 	const { blogId } = useParams();
 	// read blog data from BlogContext
@@ -50,7 +52,7 @@ function BlogContent() {
 			<main className="blog">
 				<BlogHeader title={title} author={author} date={date} />
 				<TableOfContent />
-				{content}
+				<BlogContent>{content}</BlogContent>
 				<div className="blog-aside">Related Topics</div>
 			</main>
 		</NumberingContextProvider>
@@ -79,5 +81,5 @@ function BlogListItem({
 	);
 }
 
-export default Blog;
-export { BlogContent, BlogList };
+export default BlogPage;
+export { Blog, BlogList };

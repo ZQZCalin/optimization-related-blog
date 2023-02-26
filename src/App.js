@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MathJaxContext } from 'better-react-mathjax';
-import config from 'mathjax_config';
 
 import './App.css';
 import Home from './pages/Home';
-import Blog, { BlogList, BlogContent } from './pages/Blog';
+import BlogPage, { Blog, BlogList } from './pages/Blog';
 import ReviewPage, { Review, ReviewList } from './pages/Review';
 import BlogContextProvider from './contexts/BlogContextProvider';
 import { DataProvider } from './contexts/DataContext';
+import config from './configMathJax';
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
         <DataProvider>
           <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
-              <Route path="blogs" element={<Blog />}>
+              <Route path="blogs" element={<BlogPage />}>
                 <Route path="" element={<BlogList />} />
-                <Route path=":blogId" element={<BlogContent />} />
+                <Route path=":blogId" element={<Blog />} />
               </Route>
               <Route path="reviews" element={<ReviewPage />}>
                 <Route path="" element={<ReviewList />} />

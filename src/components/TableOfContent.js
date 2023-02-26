@@ -76,12 +76,17 @@ const useIntersectionObserver = (setActiveId) => {
 function SmoothScrollLink({
 	id, name, activeId
 }) {
+	// escape special characters
+	const escapedId = CSS.escape(id);
+
+	// jump to selected section
 	const handleClick = (e) => {
 		e.preventDefault();
-		document.querySelector(`#${id}`).scrollIntoView({
+		document.querySelector(`#${escapedId}`).scrollIntoView({
 			behavior: "smooth"
 		});
 	};
+
 	return (
 		<a href={`#${id}`} onClick={handleClick}
 			className={id === activeId ? "active" : ""}
