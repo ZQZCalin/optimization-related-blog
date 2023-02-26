@@ -2,18 +2,11 @@ import { Link, Outlet, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { template } from "../blogs/Template";
-import BlogHeader from "../components/BlogHeader";
 import TableOfContent from "../components/TableOfContent";
 import NumberingContextProvider, { NumberingContext } from "../contexts/NumberingContextProvider";
 import { useContext, useEffect, useState } from "react";
-import { BlogContext } from "../contexts/BlogContextProvider";
-import { content as Data } from "../reviews/cutkosky20storm";
-
-import { MathJax } from "better-react-mathjax";
-import Proof from "../components/Proof";
-import { Section, Subsection } from "../components/Section";
-import Theorem from "../components/Theorem";
+import { DataContext } from "contexts/DataContext";
+import Loading from "components/Loading";
 
 // Page Container
 function ReviewPage() {
@@ -32,55 +25,76 @@ function ReviewPage() {
 
 // Content
 function Review() {
-	// get ip param
-	const { blogId } = useParams();
-	// read blog data from BlogContext
-	const { getBlogById } = useContext(BlogContext);
+	// get ip parameter
+	const { reviewId } = useParams();
 
-	const [text, setText] = useState();
+	// get meta data
+	const { data } = useContext(DataContext);
+	const [metadata, setMetadata] = useState(null);
 
-	// content hook
-	const [thisBlog, setThisBlog] = useState(null);
+	// initialize review content
+	const [content, setContent] = useState(null);
+
+	// fetch reveiw content once reviewId changes
 	useEffect(() => {
-		setThisBlog(getBlogById(blogId));
-		setText(Data)
-		return () => {
-			setThisBlog(null);
-			setText();
-		};
-	}, []);
+		if (data) {
+			// update metadata
+			setMetadata(data.find(entry => entry.key === reviewId).fields);
+
+			// update content
+			import(`../reviews/${reviewId}.js`)
+				.then((module) => {
+					setContent(module.default);
+				})
+				.catch((error) => {
+					console.error("Failed to load dynamic component", error);
+				});
+
+				// testing
+				console.log("review page loaded");
+			}
+	}, [data]);
 
 	// render
-	if (!thisBlog) return null;
-	const { title, author, date, content } = thisBlog;
+	if (!content) {
+		return (
+			<Loading>This blog doesn't exist.</Loading>
+		);
+	}
+
 	return (
 		<NumberingContextProvider>
 			<main className="blog">
-			<header className="blog-header">
-				<h1>{title}</h1>
-				<hr className="blog-header-hr"/>
-			</header>
+				<header className="blog-header">
+					<h1>{metadata.title}</h1>
+					<hr className="blog-header-hr" />
+				</header>
 				<TableOfContent />
-				<main className="blog-content">{text}</main>
-				{/* <div className="blog-aside">Related Topics</div> */}
+				<main className="blog-content">{content}</main>
 			</main>
 		</NumberingContextProvider>
 	);
 }
 
 
-
 // List
 function ReviewList() {
-	const { blogData } = useContext(BlogContext);
-	blogData.sort((a, b) => b.date - a.date);
+	const { data } = useContext(DataContext);
+
+	if (!data) {
+		return (
+			<Loading>Loading Data...</Loading>
+		);
+	}
+
 	return (
 		<div className="blog-list">
 			{/* descending sort by time */
-				blogData.map(({ id, title }) => <ReviewItem id={id} title={title} key={id} />)}
+				data.map(({ key, fields }) => <ReviewItem key={key} id={key} title={fields.title} />)}
 		</div>
 	);
 }
+
 
 function ReviewItem({
 	id, title

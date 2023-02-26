@@ -1,15 +1,5 @@
-{
-	"cutkosky20storm": {
-		"visible": true,
-		"title": "Momentum-Based Variance Reduction in Non-Convex SGD",
-		"authors": "Cutkosky, Ashok and Orabona, Francesco",
-		"doi": "10.48550/ARXIV.1905.10018"
-	},
-	
-	"cutkosky20momentum": {
-
-	},
-	"arjevani22lower": {
-
-	}
-}
+[
+	"arjevani19lower",
+	"cutkosky19storm",
+	"cutkosky20momentum"
+]

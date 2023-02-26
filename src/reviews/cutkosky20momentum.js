@@ -3,7 +3,7 @@ import Proof from "components/Proof";
 import { Section } from "components/Section";
 import Theorem from "components/Theorem";
 
-export const content = (
+const content = (
   <MathJax>
 		<h3>History and Innovation</h3>
 		This paper improves prior results and have the following contributions:
@@ -114,3 +114,5 @@ export const content = (
 
 	</MathJax>
 );
+
+export default content;
