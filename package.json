@@ -2,7 +2,7 @@
   "name": "personal-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zqzcalin.github.io",
+  "homepage": "https://zqzcalin.github.io/optimization-related-blog/",
   "dependencies": {
     "@retorquere/bibtex-parser": "^6.4.7",
     "@testing-library/jest-dom": "^5.16.4",
