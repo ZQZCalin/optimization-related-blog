@@ -23,11 +23,30 @@ export const database = {
 
 Currently you need to manually update your github page by running `npm run deploy` after writing your blog.
 
+## Add a paper review
+
+First, use the following template and fill in the review content similar to a blog.
+
+```javascript
+import Proof from "../components/Proof";
+import { Section, Subsection } from "../components/Section";
+import Theorem from "../components/Theorem";
+
+const content = (
+  <>
+    Your review here.
+  </>
+);
+
+export default content;
+```
+
+Next, you need to manually add the file name into `/reviews/reviews.json` and include a corresponding bibtex in `/reviews/bibtex.txt`.
+
 # How to customize your styling
 
 You can customize your own style by modifying the CSS file `src/theme.css`. The basic styles are listed at the beginning as variables in `:root`, including colors and typography.
 
 # To do list:
-1. Add a feature of latex -> html conversion with correct syntax.
-2. Add a database.
-3. Add an online blog editor (using markdown).
+1. Add reference components (matching `\ref{}` in LaTeX).
+2. 
