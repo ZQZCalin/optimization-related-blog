@@ -1,5 +1,4 @@
 // math components
-import { MathJax } from "better-react-mathjax";
 import Proof from "../components/Proof";
 import { Section, Subsection } from "../components/Section";
 import Theorem from "../components/Theorem";

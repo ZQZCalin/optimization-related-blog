@@ -5,7 +5,7 @@ export const BlogContext = createContext();
 
 function useBlogData() {
 	// direct copy of database
-	const [rawData, setRawData] = useState({})
+	const [rawData, setRawData] = useState({});
 	// abbreviated array of blog data, excluding main content
 	const [blogData, setBlogData] = useState([]);
 	useEffect(() => {
